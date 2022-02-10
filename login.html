@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <div class="parent">
+        <div class="menu">
+            <ul class="contact">
+                <li><a href="mailto:info@libertex.com">info@libertex.com</a></li>
+                <li><a href="tel:+2349021680875">+2349021680875</a></li>
+    
+            </ul>
+            <ul class="login">
+                <li><a href="login.html">Log in</a></li>
+                <li><a href="register.html">Register</a></li>
+                <section id="social"><li><a href="#"><img src="ig.png" height="20px" alt=""></a></li>
+
+                    <li><a href="#"><img src="tme.png" height="20px" alt=""></a></li></section>
+                
+            </ul>
+        </div>
+        <div onclick="shownav()" class="menuBtn">
+            <div onclick="shownav()"></div>
+            <div onclick="shownav()"></div>
+            <div onclick="shownav()"></div>
+    </div>
+        <div class="profile">
+            <a href="index.html"><img id="logo" src="logo.jfif" height="40px"alt=""> <h3>LIBERTEX</h3></a>
+            <div class="profileList">
+                <ul id="hamburgerMenu">
+                    <li><a href="index.html">HOME</a></li>            
+                    <li><a href="wwd.html">WHAT WE DO</a></li>
+                    
+                </ul>  
+            </div>
+        </div>
+        <div class="welcome">
+            <h1>WELCOME BACK!</h1>
+        </div>
+        <h2> LOG IN TO LIBERTEX</h2>
+
+        <form action="">
+            <input required autofocus name="email" type="email" placeholder="Enter your Email ID"><br>
+            <input required type="password" name="password" placeholder="Enter your Password"><br>
+            <button type="submit" > <a href="dashboard.html"> LOG IN</a></button>
+        </form>
+
+        <p>Don't have an acount? <a href="register.html">Signup Here</a> </p>
+        <p><a href="#">FORGOT PASSWORD</a></p>
+
+        <div class="paymentMethod">
+            <h2>PAYMENT METHODS WE ACCEPT</h2>
+            <hr  color="red">
+            <div>
+                <div class="payImg">
+                    <img src="PAY1.jpg" alt="">
+                <img src="PAY2.jpg" alt="">
+                <img src="PAY3.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <ul>
+                <li>24/7 Customer Support</li>
+                <li>Support@libertex.com</li>
+                <li>Friendly Support Ticket</li>
+                <li>(614)547-3104</li>
+            </ul>
+            <hr >
+            <p>copyrights @ Libertex Options Trade. 2010 -2022</p>
+            <p>All Rights Reserved</p>
+        </div>
+        <script>
+            function shownav(){
+                const navul = document.querySelector('#hamburgerMenu')
+                const navli = document.querySelector('#li')
+                if( navul.style.display!= "block"){
+                  navul.style.overflow = 'hidden'
+                  navul.style.display = "block"
+                  navul.style.backgroundColor = 'white'
+                }
+                else{
+                  navul.style.display = 'none'
+                }
+            }
+        </script> 
+    </body>
+</html>

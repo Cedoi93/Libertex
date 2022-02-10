@@ -1,0 +1,194 @@
+*{
+margin: 0%;
+padding: 0%;
+box-sizing: border-box;
+font-family: montserrat;
+}
+.parent{
+    margin: 5px 0px;
+    position: absolute;
+    display: grid;
+    grid-template-areas: 'sidebar profile profile profile'
+    'sidebar mainview mainview mainview'
+    ;
+}
+.sidebar{
+    grid-area:sidebar;
+    min-height: 98vh;
+    margin-left: 5px;
+    background-color: rgb(51, 83, 114);
+    color: white;
+    padding: 10px 0px 10px 40px ;
+    width: 200px;
+    border-radius: 15px 0px 0px 15px;
+    margin-right: 20px;
+}
+.sidebar ul li+li{
+    cursor: pointer;
+    list-style: none;
+    margin: 20px 10px;
+    padding: 20px 10px;
+}
+.sidebar ul li:first-child{
+    cursor: pointer;
+    list-style: none;
+    font-size:25px;
+    margin: 10px 0px;
+    margin-bottom: 70px;
+}
+.sidebar ul li:nth-child(2){
+    background-color: rgb(74, 116, 158);
+    width: 110px;
+    border-radius: 15px;
+}
+.sidebar ul li+li:hover{
+    background-color: rgb(74, 116, 158);
+    width: 110px;
+    border-radius: 15px;
+    transition: .3s;
+}
+.profile{
+    grid-area: profile;
+}
+.profile ul li+li{
+    list-style: none;
+    position: relative;
+    
+    left: 20px;
+    font-size: 30px;
+    float: right;
+    margin-top: 22px;
+    margin-right: 20px;
+    padding: 3px 5px;
+    cursor: pointer;
+    
+}
+.profile ul li:first-child{
+    float: left;
+    height: 40px;
+    list-style: none;
+    color: rgb(74, 116, 158);
+    font-size: 23px;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 20px;
+    width: 400px;
+}
+.mainView{
+  
+    grid-area: mainview;
+    display: grid;
+    width: 100%;
+    
+}
+
+.mainView ul li{
+    list-style: none;
+}
+
+.mainView input{
+    height: 30px;
+    width: 300px;
+}
+.mainView .wallet{
+ float: left;
+}
+.transactionHistory{
+    position: relative;
+    left: 700px;
+    top: -500px;
+}
+.mainView .mybal input{
+    margin:10px 50px;
+}
+.mybal select{
+width: 300px;
+height: 30px;
+margin:10px 50px;
+}
+.mybal{
+    border-radius: 20px;
+    grid-area: a;
+    width: 500px;
+    background-color: rgb(51, 83, 114);
+    color: white;
+    padding: 20px 0px 20px 40px;
+}
+.mybal button{
+ height: 30px;
+ width: 170px;
+ margin: 10px;
+ border: 2px solid rgb(74, 116, 158);
+ border-radius: 20px;
+ background-color: white;
+ color: rgb(74, 116, 158);
+}
+
+.settings{
+    border-radius: 20px;
+    padding: 20px;
+    height: 450px;
+    width: 450px;
+    background-color: rgb(51, 83, 114);
+    color: white;
+    margin: 10px auto;
+}
+.settings input{
+    margin: 10px auto;
+    border: 2px solid rgb(74, 116, 158);
+    color: rgb(74, 116, 158);
+}
+.settings button{
+    height: 30px;
+    width: 70px;
+    margin: 10px;
+    border: 2px solid rgb(74, 116, 158);
+    border-radius: 20px;
+    background-color: white;
+    color: rgb(74, 116, 158);
+   }
+   .plan{
+       position:relative;
+       top: -100px;
+   }
+   .plan1, .plan2{
+       display: flex;
+       justify-content: space-between;
+
+   }
+   .planbox span{
+    background-color: rgb(74, 116, 184);
+    color:white;
+    font-size: 18px;
+    margin: 5px 20px;
+    padding: 40px;
+    cursor: pointer;
+   }
+   .planbox span:hover{
+    transition: .5s;
+    background-color: rgb(139, 174, 230);
+    margin: 2px 10px;
+    padding: 45px;
+
+   }
+   .address{
+       font-size: 18px;
+   }
+   .plan p{
+       font-size: 30px;
+       color:rgb(74, 116, 158);
+       margin: 10px 10px 30px 20px;
+   }
+   .student{
+       border-left:rgb(74, 116, 158) 2px solid ;
+       border-radius: 15px 0px 0px 0px;
+   }
+   .economy{
+    border-radius:  0px 15px 0px 0px;
+}
+.promo{
+    border-radius:0px 0px 15px  0px;
+}
+   .vip{
+    border-radius:  0px 0px 0px 15px;
+}

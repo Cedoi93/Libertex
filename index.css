@@ -1,0 +1,363 @@
+@media screen and (min-width:675px) {
+    .profileList a{
+        text-decoration: none;
+        color: black;
+    }
+    .aboutus p{
+        margin: 20px 130px;
+    }
+    .parent{
+        font-family: montserrat;
+        font-size: 13px;
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    .aboutus h1{
+        color: rgb(51, 83, 114);
+
+    }
+    #social{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #social li{
+        margin: 0px 5px 0 5px;
+    }
+    .menu{
+        margin-bottom: 0px;
+        color: white;
+        background-color: rgb(4, 41, 78);
+        display:grid; 
+        grid-template-areas: "contact login";
+    }
+    .menu a{
+        padding-top: 0px;
+        color: white;
+        text-decoration: none;
+    }
+    select,option{
+        border: none;
+        color: white;
+        background-color: inherit;
+    
+    }
+    .contact{
+        grid-area: contact;
+        padding-left: 0;
+        padding-right: 0%;
+    }
+    .login{
+        grid-area: login;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 0;
+        margin-right: 0;
+    }
+    .menu ul{
+        display:flex;
+        list-style: none;
+        margin-right: 20px ;
+    }
+    li{
+        margin-left: 3%;
+    
+    } 
+    .profile{
+        padding: 4px;
+        display: grid;
+        grid-template-areas: "img profileList";
+    }  
+    img,.profile p{
+        grid-area: img;
+    }
+    .profile p{
+        margin:0 60px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: oblique;
+        font-size: 30px;
+        background-color: white;
+    }
+    .profileList ul{
+        grid-area: profileList;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .profileList li{
+    font-weight: bold;
+    }
+    .about {
+        padding: 50px;
+        color: white;
+        text-align: center;
+        border-bottom: 5px solid rgb(4, 41, 78);
+    }
+    .abt{
+        background-image: url("bg4.jpg");
+    }
+    .signin{
+        color: white;
+        background-color: rgb(4, 41, 78);
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .signin ul{
+        margin-top: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .signin a {
+        text-decoration: none;
+        color: white;
+    }
+    .signin ul li{
+        min-width: 40px;
+        margin: 12px 15px 0px ;
+        background-color: rgb(51, 83, 114);
+        padding: 10px 15px ;
+        border:1px solid rgb(51, 83, 114);
+        border-radius: 20px;
+    }
+    .signin p{
+        margin-left: 20px;
+        padding-top:10px;
+    }
+    .aboutus{
+        text-align: center;
+    }
+    #whyimg, #regimg, #copyimg, #secimg, #intimg, #accimg{
+        height: 40px;
+    }
+    .pdffile{
+        padding-top: 10px;
+        text-align: center;
+        color: white;
+        background-color: rgb(4, 41, 78);
+        height: 400px;
+    }
+    .pdf{
+        background-color: rgb(51, 83, 114);
+        margin: 20px;
+        padding: 100px;
+        font-size: 20px;
+    }
+    .about a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        background-color:rgb(51, 83, 114);
+        border-radius: 18px;
+    }
+    .menuBtn div {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+        display: none;
+      }
+}
+@media (max-width: 675px)  {
+    .parent{
+        font-family: montserrat;
+        font-size: 13px;
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    .about a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        background-color:rgb(51, 83, 114);
+        border-radius: 18px;
+    }
+    .signin a {
+        text-decoration: none;
+        color: white;
+    }
+    .profileList a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .aboutus h1{
+        color: rgb(51, 83, 114);
+    }
+    #social{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #social li{
+        margin: 0px 5px 0 5px;
+    }
+    .menu{
+        margin-bottom: 0px;
+        color: white;
+        background-color: rgb(4, 41, 78);
+        display:grid; 
+        grid-template-areas: "contact" "login";
+    }
+        .menu a{
+            padding-top: 0px;
+            color: white;
+            text-decoration: none;
+        }
+        select{
+            border: none;
+            color: white;
+            background-color: inherit;
+        
+        }
+        option{
+            color: black;
+        }
+        #social{
+            display: flex;
+            justify-content:center;
+            padding-right: 5px;
+        }
+        #social li+li{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .contact{
+            grid-area: contact;
+            padding-left: 0;
+            padding-right: 0%;
+        }
+        .login{
+            grid-area: login;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 0;
+            margin-right: 0;
+        }
+        .menu ul{
+            display:flex;
+            justify-content: space-between;
+            list-style: none;
+           ;
+        }
+        .menu ul li{
+            margin-left: 3%;
+        } 
+        .profileList ul a:hover{
+            background-color: rgb(51, 83, 114);
+            border-radius: 5px;
+            color: white;
+        }
+        .profile{
+            padding: 4px;
+            display: grid;
+            justify-content: space-between;
+            text-align: center;
+            grid-template-areas: "img img img img img profileList"
+            "list list list list list list";
+        }  
+    
+        .profileList ul{
+            list-style: none;
+            display: none;
+            justify-content: right;
+        }
+        #li{
+            grid-area: list;
+        }
+        .profileList a{
+            padding: 15px;
+            font-weight: bold;
+           display: flex;
+           text-align: left;
+        }
+        .about {
+            padding: 50px;
+            color: white;
+            background-image:url('bg4.jpg');
+            text-align: center;
+            border-bottom: 5px solid rgb(51, 83, 114);
+        }
+        .signin{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: white;
+            background-color: rgb(4, 41, 78); 
+
+        }
+        
+        .signin ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        
+        .signin ul li{
+            background-color: rgb(51, 83, 114);
+            padding: 10px 10px ;
+            border:1px solid rgb(51, 83, 114);
+            border-radius: 20px;
+        }
+        .signin ul li:nth-child(2){
+            margin-right: 20px;
+        }
+        .signin p{
+            display: flex;
+            justify-content: center;
+            
+        }
+        .aboutus{
+            text-align: center;
+        }
+        #whyimg, #regimg, #copyimg, #secimg, #intimg, #accimg{
+            height: 40px;
+        }
+        #logo{
+
+            grid-area: img;
+        }
+        .pdffile{
+            padding-top: 10px;
+            text-align: center;
+            color: white;
+            background-color:rgb(4, 41, 78);
+            height: 400px;
+        }
+        .pdf{
+            background-color: rgb(51, 83, 114);
+            margin: 20px;
+            padding: 100px;
+            font-size: 20px;
+        }
+        .menuBtn div {
+            border-radius:3px;
+            width: 25px;
+            height: 4px;
+            background-color: rgb(66, 64, 64);
+            margin: 3px 3px;
+            
+          }
+          .menuBtn{
+            width:31px;
+            margin-top:5px;
+            height: 24px;
+            grid-area: profileList;
+            border-radius:3px;
+            border: 2px solid rgb(119, 100, 100);
+            
+          }
+          img,.profile p{
+            grid-area: img;
+        }
+        .profile p{
+            margin:0 50px;
+            width: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-style: oblique;
+            font-size: 30px;
+            height: 50px;
+            background-color: white;
+        }
+}

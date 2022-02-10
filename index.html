@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libertex | Home</title>
+    <link rel="icon" href="logo.jfif">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <div class="parent">
+        <div class="menu">
+            <ul class="contact">
+                <li><a href="mailto:adelewisdom@gmail.com">Adelewisdom@gmail.com</a></li>
+                <li><a href="tel:+2349021680875">+2349021680875</a></li>
+                <li><form><select name="language" id="lang">
+                    <option value="English">English</option>
+                    <option value="Francais">Francais</option>
+                    <option value="Espanol">Spanish</option>
+                </select></form></li>
+            </ul>
+            <ul class="login">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <section id="social"><li><a href="#"><img src="ig.png" height="20px" alt=""></a></li>
+
+                    <li><a href="#"><img src="tme.png" height="20px" alt=""></a></li></section>
+                
+            </ul>
+        </div>
+        <div class="profile">
+            <img id="logo" src="logo.jfif" height="40px"alt=""> <p>LIBERTEX</p>
+            <div class="profileList">
+        
+                <ul id="hamburgerMenu">
+                    <li id="li"><a href="index.html">Home</a></li>
+                    <li id="li"><a href="WhyUs.html">Why Us</a></li>
+                    <li id="li"><a href="plans.html">Plans</a></li>
+                    <li id="li"><a href="wwd.html">What We Do</a>
+                    </li>
+                </ul>   
+                <!-- <button type="button"><<<</button> -->
+        </div>
+        <div onclick="shownav()" class="menuBtn">
+            <div onclick="shownav()"></div>
+            <div onclick="shownav()"></div>
+            <div onclick="shownav()"></div>
+    </div>
+        </div>
+        <div class="abt">
+            <div class="about">
+                <h1>Invest With Us</h1>
+                <p>
+                    Libertex Option Trading Boasts the Best Selection of Instruments, 
+                    Platforms, Account Types and Resources. <br> Enjoy a Better Investment 
+                    Experience. 
+                    Committed to Financial Freedom of All Our Clients. Globally Licensed. 
+                   <br> In-Depth Market Analysis. 
+                    Fast Account Opening. 24-Hour Client Support.
+                    <br>
+                    <br>
+                    <br>
+                    <a href="wwd.html">Find Out More About What We Do</a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="signin">
+            <p>GET ACCESS TO YOUR ACCOUNT</p>
+            <ul>
+                <li><a href="login.html">SIGN IN</a>
+                </li>
+                <li><a href="register.html">REGISTER NOW</a></li>
+            </ul>
+        </div>
+        <div class="aboutus">
+            <h1> WHY US </h1>
+                <hr color='rgb(4, 41, 78)'><img id="whyimg" src="why.png" alt=""></hr>
+                <p>
+                    We are the best at what we offer. We have a unique blend of professionalism, experience, commitment, and a burning
+                     desire to improve. 
+                    We are in business to be profitable,
+                     but it is the way we do business that defines us.
+            </p>
+            <br>
+            
+            <img id='copyimg' src="copy.png" alt="">
+            <h1>COPY TRADING</h1>
+            
+            <p>Libertex Option Trade provides each client the opportunity 
+to choose an expert trader who mirrors his/her trading 
+activities to theirs for better analysis and profits 
+making. A Personalised and detailed review on the 
+inner workings of their managed account
+ is also open to their dashboard on a daily basis.</p>
+
+ <img id="secimg" src="sec.png" alt="">
+ <h1>SECURITY</h1>
+ <p>To secure client's data, Libertex Option Trade resides on a 
+     dedicated server equipped with DDoS protection and SSL certificate, so attacks are virtually impossible. 
+     Passwords are also encrypted in the database, making it almost
+      impossible for our webmasters to see passwords.</p>
+        
+
+        <img src="int.png" alt="" id="intimg">
+        <h1>INTEGRITY</h1>
+        <p>Integrity is the foundation of any successful business. We at Libertex fully recognize and appreciate this fact. 
+            We treat our clients with fairness, honor, and Honesty. A good name is better than sacrifice. At Libertex, we believe this to the 
+            core and consider it a non-negotiable. We earn the trust of our clients, 
+            colleagues, community, and shareholders through the 
+            quality of our work and our high ethical standards.
+        </p>
+        <img src="acc.png" alt="" id="accimg">
+        <h1>ACCOUNTABILITY</h1>
+        <p>To whom much is given, much is expected. We can only 
+            reward the unwavering trust of our clients and traders by offering them top-quality accounting services. 
+            This together with equity fairness and accountability, has been the magic wands we have used to draw, maintain, and 
+            satisfy our numerous customers. We take responsibility for our actions, with proper records and documentation. We analyze and 
+            manage risks, and from whence, 
+            we make decisions we are proud of.</p>
+    </div>
+    <div class="pdffile">
+        <h1>OUR PDF FILE</h1>
+        <hr color=" white">
+        <p>To find out more about Libertex Option Trade Copy Trading 
+            Strategy, please download our platform's PDF and read through. We are committed to providing a complete, balanced financial 
+            stability and building
+             a financial security that's governed by the Law.</p>
+             <div class='pdf'>
+                 COPY TRADING.PDF
+             </div>
+    </div>
+  </div> 
+  <script>
+      function shownav(){
+          const navul = document.querySelector('#hamburgerMenu')
+          const navli = document.querySelector('#li')
+          if( navul.style.display!= "block"){
+            navul.style.overflow = 'hidden'
+            navul.style.display = "block"
+            navul.style.backgroundColor = 'white'
+          }
+          else{
+            navul.style.display = 'none'
+          }
+      }
+  </script> 
+  </body>
+</html>

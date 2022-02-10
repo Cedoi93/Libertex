@@ -1,0 +1,366 @@
+@media (min-width: 760px) {
+    body{
+        font-family: montserrat;
+    }
+    .menuBtn div {
+        display: none; 
+      }
+    .menu ul{
+        list-style: none;
+        display: flex;
+        justify-content: s;
+    }
+    .menu a{
+        padding-top: 0px;
+        color: white;
+        text-decoration: none;
+    }
+    .menuBtn div {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+        display: none;
+      }
+    .menu{
+        margin-bottom: 0px;
+            color: white;
+            background-color:rgb(4, 41, 78);
+            display:grid; 
+            grid-template-areas: "contact login";
+    }
+    .menu li{
+        margin-left: 3%;
+    } 
+    select,option{
+        border: none;
+        color: white;
+        background-color: inherit;
+    }
+    .profile{
+        padding: 4px;
+        margin-bottom: 60px;
+        align-items: center;
+    }
+
+    .profile img,.profile p{
+        padding: 10px 10px;
+        width: 50px;
+        float: left;
+        grid-area: img;
+    }
+    .profile p{
+        margin:10px 2px;
+        color: black;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: oblique;
+        font-size: 30px;
+        width: 70px;
+    }  
+    .profileList ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        float: right;
+        
+    }
+    .profileList ul li+li{
+        width: 130px;
+    }
+    .profileList li, .profileList a{
+        padding: 5px;
+    font-weight: bold;
+    }
+    .profileList a{
+        text-decoration: none;
+        color: black;
+    }
+    .profileList li:hover, .profileList li:focus, .profileList a:hover, .profileList a:focus{
+        color: white;
+        background-color: rgb(51, 83, 114);
+        border-radius: 3px;
+    }
+    .login{
+        grid-area: login;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 0;
+        margin-right: 0;
+    }
+    .contact{
+        grid-area: contact;
+        padding-left: 0;
+        padding-right: 0%;
+    }
+    #social{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #social li{
+        margin: 0px 5px 0 5px;
+    }
+    .welcome{
+        font-size: 25px;
+        height: 170px;
+        background-blend-mode: multiply;
+        background-image: url('bg4.jpg');
+        background-repeat:unset;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+    
+    }
+    .footer p,h1,h2{
+        text-align: center;
+    }
+    h2{
+        color: rgb(51, 83, 114);
+    }
+    form{
+        text-align:center;
+    }
+    .input{
+        height: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    button{
+        color: white;
+        background-color: rgb(51, 83, 114);
+        border: none;
+        width: 305px;
+        height: 50px;
+    }
+    p a{
+        text-decoration: none;
+        color: rgb(4, 41, 78);
+    }
+    
+    .paymentMethod div{
+        display: flex;
+        justify-content: center;
+        height: 200px;
+        margin:20px;
+        padding-bottom: 20px;
+    }
+    .paymentMethod div img{
+        margin-left: 30px;
+    }
+    .footer{
+        background-color:rgb(4, 41, 78);
+        color: white;
+        padding: 20px;
+    }
+    
+    .footer ul{
+        list-style: none;
+        display: flex;
+        text-align: center;
+        justify-content: space-evenly;
+        
+    }
+    form a{
+        color: rgb(51, 83, 114);
+        text-decoration: none;
+    }
+    #checkbox{
+        margin-right: 3px;
+        margin-bottom: 10px;
+    }
+    
+
+}
+@media (max-width:761px) {
+    body{
+        font-family: montserrat;
+        font-size: 3vw;
+    }
+    .home li+li{
+        margin-left: 60px;
+        display: none;
+    }
+    .menu{
+        margin-bottom: 0px;
+        color: white;
+        background-color: rgb(4, 41, 78);
+        display:grid; 
+        grid-template-areas: "contact" "login";
+    }
+        .menu a{
+            padding-top: 0px;
+            color: white;
+            text-decoration: none;
+        }
+        .menu ul{
+            list-style: none;
+        }
+        .contact{
+            display: flex;
+            justify-content: space-between;
+
+        }
+    select,option{
+        border: none;
+        color: white;
+        background-color: inherit;
+    } 
+    .profile img{
+        height: 50px;
+    }
+    .profile a{
+        font-size: 25px;
+        display: flex;
+        padding-top: 5px;
+        margin: 0px 0px;
+        line-height: 2px;
+    }
+    .profile ul li a{
+        font-size: 15px;
+        margin: 5px;
+        width: 150px;
+        padding-bottom: 5px;
+        line-height: 23px;
+        
+    }
+    .menuBtn div {
+        border-radius:3px;
+        width: 25px;
+        height: 4px;
+        background-color: rgb(66, 64, 64);
+        margin: 3px 3px;
+        
+      }
+    .menuBtn{
+        float: right;
+        width:31px;
+        margin-top:15px;
+        height: 24px;
+        grid-area: profileList;
+        border-radius:3px;
+        border: 2px solid rgb(119, 100, 100);
+        
+      }
+      #hamburgerMenu{
+          padding-top: 100px;
+          display: none;
+          justify-content: left;
+          list-style: none;
+      }
+      #hamburgerMenu li{
+        margin-top: 10px;
+        width: 120px;
+      }
+
+    .profile p{
+        margin-left: 5px;
+    }
+    .profile ul{
+        display: none;
+    }
+    .profile a{
+        width: 2px;
+        float: left;
+        color: black;
+        text-decoration: none;
+    }
+    .profileList li:hover, .profileList li:focus, .profileList a:hover, .profileList a:focus{
+        color: white;
+        background-color: rgb(51, 83, 114);
+        border-radius: 3px;
+    }
+    .login{
+        grid-area: login;
+        display: flex;
+        justify-content:space-between;
+        padding-right: 0;
+        margin-right: 0;
+    }
+    .contact{
+        grid-area: contact;
+        padding-left: 0;
+        padding-right: 0%;
+    }
+    #social{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #social li{
+        margin: 0px 5px 0 5px;
+    }
+    .welcome{
+        font-size: 25px;
+        height: 170px;
+        background-image:url('bg4.jpg');
+        background-repeat:unset;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+        margin-top: 70px;
+    
+    }
+    p,h1,h2{
+        text-align: center;
+    }
+    h2{
+        color: rgb(51, 83, 114);
+    }
+    form{
+        text-align:center;
+    }
+    .input{
+        height: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    button{
+        color: white;
+        background-color: rgb(4, 41, 78);
+        border: none;
+        width: 305px;
+        height: 50px;
+    }
+    p a{
+        text-decoration: none;
+        color: rgb(4, 41, 78);
+    }
+    
+    .paymentMethod div{
+        display: flex;
+        justify-content: center;
+        height: 120px;
+        margin:20px;
+        padding-bottom: 20px;
+    }
+    .paymentMethod div img{
+        margin-left: 30px;
+    }
+    .footer{
+        background-color: rgb(4, 41, 78);
+        color: white;
+        padding: 20px;
+    }
+    
+    .footer ul{
+        list-style: none;
+        display: none;
+        text-align: center;
+        justify-content: space-evenly;
+        
+    }
+    form a{
+        color:rgb(4, 41, 78);
+        text-decoration: none;
+    }
+    #checkbox{
+        margin-right: 3px;
+        margin-bottom: 10px;
+    }
+    /* .menuBtn div {
+           
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+        
+      } */
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libertex | Dashboard</title> 
+    <link rel="stylesheet" href="css\all.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body onload="getTheme();theDash()" style="background-color: white;">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <div class="parent">
+        <div class="profile">
+            <ul>
+                <li><h2>Welcome, John Doe</h2></li>
+                <li id="theme" style="display: none;" onclick="theme()"><i class="fas fa-sun"></i></li>
+                <li id="theme2" onclick="theme()" ><i class="fas fa-moon"></i></li>
+            </ul>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>LIBERTEX</li>
+                <li id="dash" onclick="theDash()"><i class="fas fa-user"></i> Dashboard</li>
+                <li  id="wallet" onclick="wallet()"><i class="fas fa-wallet"></i> Wallet</li>
+                <li  id="setting" onclick="settings()"><i class="fas fa-wrench"></i> Settings</li>
+                <li><i class="fas fa-door-open"></i> <a  style="text-decoration:none; color:white" href="login.html"> Log Out</a></li>
+            </ul>
+        </div>
+
+      <div class="mainView">
+        <div class="plan">
+            <p> Investment Plans </p>
+ <div class="planbox">
+   <div class="plan1">
+    <span onclick="studentPlan()" class="student">
+        <h2> Student plan</h2>
+         Minimum: $150 <br> 
+         Maximum: unlimited <br>
+         Profit x2 -12hours 
+        </span>
+         
+         <span onclick="regularPlan()" class="regular">
+            <h2> Regular plan</h2>
+         Minimum: $3000 <br>
+         Maximum: unlimited <br>
+         Profit x3 24hours
+         </span>
+         
+         
+        <span onclick="economyPlan()" class="economy">
+        <h2> Economy Plan </h2>
+         Minimum: $10,000 <br>
+         Maximum: unlimited <br>
+         Profit x5 in 48hours
+        </span>
+   </div>
+    
+    <div class="plan2">
+        <span onclick="vipPlan()" class="vip">
+            <h2> VIP plan </h2>
+         Minimum: $20,000 <br>
+         Maximum: unlimited <br>
+         Profit x10 in 7days
+         </span> 
+         
+         <span onclick="promoPlan()" class="promo">
+           <h2>  VVIP/PROMO PLAN </h2>
+         Minimum: $100,000 <br>
+         Maximum: Unlimited <br>
+         Profit x10 30days
+         </span>
+    </div>
+ </div>
+ 
+         </div>
+        <div class="wallet">
+            <div class="mybal">
+               <strong> <h3>BALANCE</h3> </strong>
+                <h1><i class="fas fa-money-bill"></i></i> Avail. Balance: $40,235</h1>
+                <br>
+                <br>
+                <h2><i class="fas fa-money-bill"></i> In Investment: $20,390</h2>
+                 <br>
+                 <br>
+                 <h2><i class="fas fa-money-check-alt"></i> Expected Payout: $62,180</h2>
+
+                
+                
+                 <form id="depositForm" action="">
+                    <button onclick="withdraw">Withdraw</button> <button type="submit">Confirm Deposit</button>
+                     <input id="Planbox" type="number" name="Plan" placeholder="">
+                    <input type="text" name="senderName" placeholder="Enter your Username">
+                    <br>
+                    <select class="coin" name="Coin" onchange="deposit()" id="Coin">
+                        <option value="Default">Select a coin to deposit</option>
+                        <option value="USDT">USDT</option>
+                        <option value="BTC">BTC</option>
+                        <option value="Tron">Tron</option>
+                        <option value="Eth">Ethereum</option>
+                        <option value="LTC">Litecoin</option>
+                    </select>
+                </form>
+                <span class="address">
+                    <p style="display: none;" class="usdt"> Send USDT (trc20) to  <i>TJbUgaTBHh3KEH4sH6PD23pTM5NThiyto8</i></p>
+                <p style="display: none;" class="tron"> Send Tron to  <i>TJbUgaTBHh3KEH4sH6PD23pTM5NThiyto8</i></p>
+                <p style="display: none;" class="ETH"> Send ETH to <i>0xC10f8f9cEef4819bB1C0f36c3276E7CB49906b38</i></p>
+                <p style="display: none;" class="BTC"> Send BTC to  <i>14o2kY7a51DUi9LEbdCaGGhuEwx836Q1BH</i></p>
+                <p style="display: none;" class="LTC"> Send LTC to <i>ltc1qlxnurx8eszwzcwzsjt2u4h0sf5vh0dweqfj0jc</i></p>
+                </span>
+            </div>
+        </div>
+        <div class="transactionHistory">
+            <h2>Transaction History</h2>
+            <p>No recent transactions</p>
+        </div>
+        <div class="settings">
+           <h1> Settings</h1>
+            <form action="">
+                <input type="text" placeholder="New wallet address">
+                <br>
+                <input type="text" placeholder="Confirm new wallet address"> <button>Done</button>
+                <br><br>
+                <input type="text" placeholder="Account name"> <button>Done</button>
+            <br><br>
+            <input type="email" placeholder="Account Email"> <button>Done</button>
+            <br><br>
+            <input type="password" placeholder="New Password"> 
+            <br>
+            <input type="password" placeholder="Confirm password"><button>Done</button>
+            </form>
+        </ul>
+        </div>
+      
+      </div>
+      <script>
+const tron = document.querySelector(".tron")
+const btc = document.querySelector(".BTC")
+const ltc = document.querySelector(".LTC")
+const eth = document.querySelector(".ETH")
+
+          const usdt = document.querySelector(".usdt")
+          const coin = document.querySelector(".coin")
+          const coinValue = coin.value
+        const plan= document.querySelector('.plan')
+        const walletpage= document.querySelector('.wallet')
+        const settingspage= document.querySelector('.settings')
+        const transactionHistory= document.querySelector('.transactionHistory')
+        const body = document.querySelector("body")
+        const lightTheme = document.querySelector("#theme")
+        const darkTheme = document.querySelector("#theme2")
+        const dashboard = document.querySelector('#dash')
+        const setting = document.querySelector('#setting')
+        const walle = document.querySelector('#wallet')
+        function theme(){
+        if(body.style.backgroundColor === 'white'){  
+        body.style.backgroundColor =  'rgb(73, 75, 77)'
+        lightTheme.style.display ='block'
+        darkTheme.style.display = 'none'
+        body.style.color = "white"
+        localStorage.setItem('theme', 'rgb(73, 75, 77)')
+        localStorage.setItem('texcolor','white')
+        localStorage.setItem('lightdisplay','block')
+        localStorage.setItem('darkdisplay','none')
+
+    
+     }
+        else{
+        body.style.backgroundColor = "white"
+        body.style.color = "black"
+        darkTheme.style.display ='block'
+        lightTheme.style.display ='none'
+        localStorage.setItem('theme', 'white')
+        localStorage.setItem('texcolor','black')
+        localStorage.setItem('darkdisplay','block')
+        localStorage.setItem('lightdisplay','none')
+      }
+    }
+        function getTheme(){
+            const text = localStorage.getItem('texcolor')
+            const bg = localStorage.getItem('theme')
+            const darkdisplay = localStorage.getItem('darkdisplay')
+            const lightdisplay = localStorage.getItem('lightdisplay')
+           
+            body.style.backgroundColor = bg
+            body.style.color= text
+            lightTheme.style.display = lightdisplay
+            darkTheme.style.display = darkdisplay
+
+    
+        }
+        function wallet(){
+            walle.style.backgroundColor='rgb(74, 116, 158)'
+            walle.style.width = '110px'
+            walle.style.borderRadius = '15px'
+            dashboard.style.backgroundColor='transparent'
+            setting.style.backgroundColor='transparent'
+            settingspage.style.display = 'none'
+            walletpage.style.display = 'block'
+            plan.style.display = 'none'
+            transactionHistory.style.display = 'block'
+        }
+        function settings(){
+        setting.style.backgroundColor='rgb(74, 116, 158)'
+        setting.style.width = '110px'
+        setting.style.borderRadius = '15px'
+        dashboard.style.backgroundColor='transparent'
+        walle.style.backgroundColor='transparent'
+        walletpage.style.display = 'none'
+        settingspage.style.display = 'block'
+        plan.style.display = 'none'
+        transactionHistory.style.display = 'none'
+    }
+        function theDash(){
+        dashboard.style.backgroundColor='rgb(74, 116, 158)'
+        dashboard.style.width = '130px'
+        dashboard.style.borderRadius = '15px'
+        setting.style.backgroundColor='transparent'
+        walle.style.backgroundColor='transparent'
+        walletpage.style.display = 'none'
+        settingspage.style.display = 'none'
+        plan.style.display = 'block'
+        transactionHistory.style.display = 'none'
+        }
+const student = document.querySelector(".student")
+const regular = document.querySelector(".regular")
+const economy = document.querySelector(".economy")
+const vip = document.querySelector(".vip")
+const promo = document.querySelector(".promo")
+const planbox = document.querySelector("#Planbox")
+
+        function studentPlan(){
+            plan.style.display = 'none'
+            wallet()
+            planbox.placeholder = " minimum $150"
+            planbox.min = "150"
+            planbox.name = 'studentPlan'
+        }
+        function regularPlan(){
+            plan.style.display = 'none'
+           wallet()
+            planbox.placeholder = " minimum $3,000"
+            planbox.min = "3000"
+            planbox.name = 'regularPlan'
+        }
+        function economyPlan(){
+            plan.style.display = 'none'
+            wallet()
+            planbox.placeholder = " minimum $10,000"
+            planbox.min = "10000"
+            planbox.name = 'economyPlan'
+        }
+        function vipPlan(){
+            plan.style.display = 'none'
+           wallet()
+            planbox.placeholder = " minimum $20,000"
+            planbox.min = "20000"
+            planbox.name = 'vipPlan'
+        }
+        function promoPlan(){
+            plan.style.display = 'none'
+           wallet()
+            planbox.placeholder = " minimum $100,000"
+            planbox.min = "100000"
+            planbox.name = 'vipPlan'
+        }
+        function deposit(){
+
+        const coinValue = coin.value
+        if(coinValue === 'USDT'){
+            usdt.style.display = 'block'
+            btc.style.display = 'none'
+            eth.style.display = 'none'
+           tron.style.display = 'none'
+            ltc.style.display = 'none'
+        }
+        else if(coinValue === 'BTC'){
+            usdt.style.display = 'none'
+            btc.style.display = 'block'
+            eth.style.display = 'none'
+           tron.style.display = 'none'
+            ltc.style.display = 'none'
+        }
+        else if(coinValue === 'LTC'){
+            usdt.style.display = 'none'
+            btc.style.display = 'none'
+            eth.style.display = 'none'
+           tron.style.display = 'none'
+            ltc.style.display = 'block'
+        }
+        else if(coinValue === 'Eth'){
+            usdt.style.display = 'none'
+            btc.style.display = 'none'
+            eth.style.display = 'block'
+           tron.style.display = 'none'
+            ltc.style.display = 'none'
+        }
+        else if(coinValue === 'Tron'){
+            usdt.style.display = 'none'
+            btc.style.display = 'none'
+            eth.style.display = 'none'
+           tron.style.display = 'block'
+            ltc.style.display = 'none'
+        }
+        else{
+            usdt.style.display = 'none'
+            btc.style.display = 'none'
+            eth.style.display = 'none'
+           tron.style.display = 'none'
+            ltc.style.display = 'none'
+        }
+        }
+      </script>
+    </body>
+</html>
