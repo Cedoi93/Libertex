@@ -5,72 +5,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libertex | Dashboard</title> 
+    <link rel="icon" href="logo.jfif" type="image/x-icon">
     <link rel="stylesheet" href="css\all.css">
     <link rel="stylesheet" href="dashboard.css">
 </head>
-<body onload="getTheme();theDash()" style="background-color: white;">
+<body style="background-color: white;" onload="getTheme();theDash();" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <div class="parent">
+    <div onload="getUser()" class="parent">
+
         <div class="profile">
             <ul>
-                <li><h2>Welcome, John Doe</h2></li>
-                <li id="theme" style="display: none;" onclick="theme()"><i class="fas fa-sun"></i></li>
+                <li id="investmentPlans"><h2> Dashboard</h2></li>
+                <li id="theme" style="display:none;" onclick="theme()"><i class="fas fa-sun"></i></li>
                 <li id="theme2" onclick="theme()" ><i class="fas fa-moon"></i></li>
             </ul>
         </div>
+        
         <div class="sidebar">
             <ul>
                 <li>LIBERTEX</li>
                 <li id="dash" onclick="theDash()"><i class="fas fa-user"></i> Dashboard</li>
-                <li  id="wallet" onclick="wallet()"><i class="fas fa-wallet"></i> Wallet</li>
+                <li  id="wallet" onclick="walletOnly()"><i class="fas fa-wallet"></i> Wallet</li>
                 <li  id="setting" onclick="settings()"><i class="fas fa-wrench"></i> Settings</li>
-                <li><i class="fas fa-door-open"></i> <a  style="text-decoration:none; color:white" href="login.html"> Log Out</a></li>
+                <li><i class="fas fa-door-open"></i> <a  style="text-decoration:none; color:white" href="login.html"> LogOut</a></li>
             </ul>
         </div>
-
+        <div class="footer">
+            <ul>
+                <li id="dash" onclick="theDash()"><i class="fas fa-user"></i> </li>
+                <li  id="wallet" onclick="walletOnly()"><i class="fas fa-wallet"></i> </li>
+                <li  id="setting" onclick="settings()"><i class="fas fa-wrench"></i></li>
+                <li><a  style="text-decoration:none; color:white" href="login.html"> <i class="fas fa-door-open"></i></a></li>
+            </ul>
+        </div>
       <div class="mainView">
         <div class="plan">
-            <p> Investment Plans </p>
  <div class="planbox">
    <div class="plan1">
     <span onclick="studentPlan()" class="student">
-        <h2> Student plan</h2>
-         Minimum: $150 <br> 
-         Maximum: unlimited <br>
-         Profit x2 -12hours 
+        <ul>
+           
+           
+            <li><h4>0.00</h4></li>
+            <li><i class="fas fa-dollar-sign"></i></li>
+        </ul>
+           <h3> Student plan</h3>
+            Profit x2 in 12hours 
+        
         </span>
          
          <span onclick="regularPlan()" class="regular">
-            <h2> Regular plan</h2>
-         Minimum: $3000 <br>
-         Maximum: unlimited <br>
-         Profit x3 24hours
+            <ul>
+           
+            
+                <li><h4>0.00</h4></li>
+                <li><i class="fas fa-dollar-sign"></i></li>
+            </ul>
+               <h3> Regular plan</h3> 
+            
+         Profit x3 in 24hours
          </span>
          
          
         <span onclick="economyPlan()" class="economy">
-        <h2> Economy Plan </h2>
-         Minimum: $10,000 <br>
-         Maximum: unlimited <br>
-         Profit x5 in 48hours
+            <ul>
+           
+              
+                <li><h4>0.00</h4></li>
+                <li><i class="fas fa-dollar-sign"></i></li>
+            </ul>
+            <h3> Economy plan</h3> 
+            
+            Profit x5 in 48hours
         </span>
    </div>
     
     <div class="plan2">
         <span onclick="vipPlan()" class="vip">
-            <h2> VIP plan </h2>
-         Minimum: $20,000 <br>
-         Maximum: unlimited <br>
+            <ul>
+           
+                
+                <li><h4>0.00</h4></li>
+                <li><i class="fas fa-dollar-sign"></i></li>
+            </ul>
+               <h3> VIP plan</h3> 
+            
          Profit x10 in 7days
          </span> 
-         
+         <span onclick="companyPlan()" class="company"><ul>
+           
+                
+            <li><h4>0.00</h4></li>
+            <li><i class="fas fa-dollar-sign"></i></li>
+        </ul>
+           <h3> Company plan</h3> 
+        
+           Profit x5 in 30days</span>
          <span onclick="promoPlan()" class="promo">
-           <h2>  VVIP/PROMO PLAN </h2>
-         Minimum: $100,000 <br>
-         Maximum: Unlimited <br>
-         Profit x10 30days
+            <ul>
+           
+                
+                <li><h4>0.00</h4></li>
+                <li><i class="fas fa-dollar-sign"></i></li>
+            </ul>
+               <h3> PROMO plan</h3> 
+            
+         Profit x10 in 30days
          </span>
     </div>
  </div>
@@ -79,67 +121,97 @@
         <div class="wallet">
             <div class="mybal">
                <strong> <h3>BALANCE</h3> </strong>
-                <h1><i class="fas fa-money-bill"></i></i> Avail. Balance: $40,235</h1>
+               <br>
+                <h1><i class="fas fa-money-bill"></i></i> Avail. Balance: $0.00</h1>
                 <br>
-                <br>
-                <h2><i class="fas fa-money-bill"></i> In Investment: $20,390</h2>
+                <h2><i class="fas fa-money-bill"></i> Total Investment: $0.00</h2>
                  <br>
-                 <br>
-                 <h2><i class="fas fa-money-check-alt"></i> Expected Payout: $62,180</h2>
-
+                 <h2><i class="fas fa-money-check-alt"></i> Expected Payout: $0.00</h2>       
                 
-                
-                 <form id="depositForm" action="">
-                    <button onclick="withdraw">Withdraw</button> <button type="submit">Confirm Deposit</button>
-                     <input id="Planbox" type="number" name="Plan" placeholder="">
-                    <input type="text" name="senderName" placeholder="Enter your Username">
-                    <br>
-                    <select class="coin" name="Coin" onchange="deposit()" id="Coin">
-                        <option value="Default">Select a coin to deposit</option>
-                        <option value="USDT">USDT</option>
-                        <option value="BTC">BTC</option>
-                        <option value="Tron">Tron</option>
-                        <option value="Eth">Ethereum</option>
-                        <option value="LTC">Litecoin</option>
-                    </select>
-                </form>
-                <span class="address">
-                    <p style="display: none;" class="usdt"> Send USDT (trc20) to  <i>TJbUgaTBHh3KEH4sH6PD23pTM5NThiyto8</i></p>
-                <p style="display: none;" class="tron"> Send Tron to  <i>TJbUgaTBHh3KEH4sH6PD23pTM5NThiyto8</i></p>
-                <p style="display: none;" class="ETH"> Send ETH to <i>0xC10f8f9cEef4819bB1C0f36c3276E7CB49906b38</i></p>
-                <p style="display: none;" class="BTC"> Send BTC to  <i>14o2kY7a51DUi9LEbdCaGGhuEwx836Q1BH</i></p>
-                <p style="display: none;" class="LTC"> Send LTC to <i>ltc1qlxnurx8eszwzcwzsjt2u4h0sf5vh0dweqfj0jc</i></p>
+                 <form id="depositForm" action="router.post('/cashier/deposit', actions.deposit)">
+                    <input id="Planbox" type="number" name="Plan" placeholder="">
+                    <span style="display: none;" class="depositController">
+                        <input type="text" name="senderName" placeholder="Enter your Username">
+                        <br>
+                        <select class="coin" name="Coin" onchange="deposit()" id="Coin">
+                            <option value="Default">Select a coin to deposit</option>
+                            <option value="USDT">USDT</option>
+                            <option value="BTC">BTC</option>
+                            <option value="Tron">Tron</option>
+                            <option value="Eth">Ethereum</option>
+                            <option value="LTC">Litecoin</option>
+                        </select>
+                   
+                        <center>
+                            <span class="address">
+                                <p style="display: none;" class="usdt"> Send USDT (trc20) to <br> <i>TJbUgaTBHh3KEH4sH6PD23pTM5NThiyto8</i></p>
+                            <p style="display: none;" class="tron"> Send Tron to <br> <i>TJbUgaTBHh3KEH4sH6PD23pTM5NThiyto8</i></p>
+                            <p style="display: none;" class="ETH"> Send ETH to <br> <i>0xC10f8f9cEef4819bB1C0f36c3276E7CB49906b38</i></p>
+                            <p style="display: none;" class="BTC"> Send BTC to <br> <i>14o2kY7a51DUi9LEbdCaGGhuEwx836Q1BH</i></p>
+                            <p style="display: none;" class="LTC"> Send LTC to <br> <i>ltc1qlxnurx8eszwzcwzsjt2u4h0sf5vh0dweqfj0jc</i></p>
+                            </span>
+                           </center>
+                    <center>
+                        <button type="submit">Confirm Deposit</button>
+                    </center>
                 </span>
+                <center><button  type="submit" class="withdrawBtn" onclick="withdraw()">Withdraw</button></center>
+                </form>
+              
+                <br>
+               
             </div>
         </div>
         <div class="transactionHistory">
             <h2>Transaction History</h2>
             <p>No recent transactions</p>
+           
+            
         </div>
         <div class="settings">
            <h1> Settings</h1>
-            <form action="">
-                <input type="text" placeholder="New wallet address">
-                <br>
-                <input type="text" placeholder="Confirm new wallet address"> <button>Done</button>
+           <div class="span1">
+
+               <form method="post" >
+                <input required type="text" placeholder="Account name"> <button>Done</button>
                 <br><br>
-                <input type="text" placeholder="Account name"> <button>Done</button>
-            <br><br>
-            <input type="email" placeholder="Account Email"> <button>Done</button>
-            <br><br>
-            <input type="password" placeholder="New Password"> 
-            <br>
-            <input type="password" placeholder="Confirm password"><button>Done</button>
-            </form>
-        </ul>
+               </form>
+                <form action="" method="post">
+                    <input required type="text" placeholder="New wallet address">
+                    <br>
+                    <input required type="text" placeholder="Confirm new wallet address"> <button>Done</button>
+                </form>
+           </div>
+            <span class="span2">
+                    <form action="" method="post">
+                    <input required type="email" placeholder="New Account Email"> <button>Done</button>
+                    </form>
+    <br>
+                <form action="" method="post">
+                <input required type="password" placeholder="New Password"> 
+                <br>
+                <input required type="password" placeholder="Confirm password"><button>Done</button>
+                </form>
+               
+            </span>
         </div>
       
       </div>
+    
       <script>
-const tron = document.querySelector(".tron")
-const btc = document.querySelector(".BTC")
-const ltc = document.querySelector(".LTC")
-const eth = document.querySelector(".ETH")
+          const withdrawBtn = document.querySelector(".withdrawBtn")
+          const student = document.querySelector(".student")
+          const depositController = document.querySelector(".depositController")
+            const regular = document.querySelector(".regular")
+            const company = document.querySelector(".companyPlan")
+            const economy = document.querySelector(".economy")
+            const vip = document.querySelector(".vip")
+            const promo = document.querySelector(".promo")
+            const planbox = document.querySelector("#Planbox")
+            const tron = document.querySelector(".tron")
+            const btc = document.querySelector(".BTC")
+            const ltc = document.querySelector(".LTC")
+            const eth = document.querySelector(".ETH")
 
           const usdt = document.querySelector(".usdt")
           const coin = document.querySelector(".coin")
@@ -154,20 +226,9 @@ const eth = document.querySelector(".ETH")
         const dashboard = document.querySelector('#dash')
         const setting = document.querySelector('#setting')
         const walle = document.querySelector('#wallet')
+        const profileH2 = document.querySelector("#investmentPlans")
         function theme(){
-        if(body.style.backgroundColor === 'white'){  
-        body.style.backgroundColor =  'rgb(73, 75, 77)'
-        lightTheme.style.display ='block'
-        darkTheme.style.display = 'none'
-        body.style.color = "white"
-        localStorage.setItem('theme', 'rgb(73, 75, 77)')
-        localStorage.setItem('texcolor','white')
-        localStorage.setItem('lightdisplay','block')
-        localStorage.setItem('darkdisplay','none')
-
-    
-     }
-        else{
+        if(body.style.backgroundColor !== "white"){  
         body.style.backgroundColor = "white"
         body.style.color = "black"
         darkTheme.style.display ='block'
@@ -176,6 +237,18 @@ const eth = document.querySelector(".ETH")
         localStorage.setItem('texcolor','black')
         localStorage.setItem('darkdisplay','block')
         localStorage.setItem('lightdisplay','none')
+    
+     }
+        else{
+            body.style.backgroundColor =  'rgb(73, 75, 77)'
+        lightTheme.style.display ='block'
+        darkTheme.style.display = 'none'
+        body.style.color = "white"
+        localStorage.setItem('theme', 'rgb(73, 75, 77)')
+        localStorage.setItem('texcolor','white')
+        localStorage.setItem('lightdisplay','block')
+        localStorage.setItem('darkdisplay','none')
+        
       }
     }
         function getTheme(){
@@ -192,9 +265,10 @@ const eth = document.querySelector(".ETH")
     
         }
         function wallet(){
-            walle.style.backgroundColor='rgb(74, 116, 158)'
+            walle.style.backgroundColor='rgb(135, 190, 245)'
             walle.style.width = '110px'
             walle.style.borderRadius = '15px'
+            profileH2.style.display ="none"
             dashboard.style.backgroundColor='transparent'
             setting.style.backgroundColor='transparent'
             settingspage.style.display = 'none'
@@ -202,10 +276,28 @@ const eth = document.querySelector(".ETH")
             plan.style.display = 'none'
             transactionHistory.style.display = 'block'
         }
+        function walletOnly(){
+            walle.style.backgroundColor='rgb(135, 190, 245)'
+            walle.style.width = '110px'
+            walle.style.borderRadius = '15px'
+            profileH2.style.display ="none"
+            dashboard.style.backgroundColor='transparent'
+            setting.style.backgroundColor='transparent'
+            settingspage.style.display = 'none'
+            walletpage.style.display = 'block'
+            plan.style.display = 'none'
+            transactionHistory.style.display = 'block'
+            depositController.style.display = "none"
+            withdrawBtn.style.display = 'block'
+            planbox.style.display = "block"
+            planbox.min = '150'
+            planbox.placeholder = 'Enter withdrawal amount'
+        }
         function settings(){
-        setting.style.backgroundColor='rgb(74, 116, 158)'
+        setting.style.backgroundColor='rgb(135, 190, 245)'
         setting.style.width = '110px'
         setting.style.borderRadius = '15px'
+        profileH2.style.display ="none"
         dashboard.style.backgroundColor='transparent'
         walle.style.backgroundColor='transparent'
         walletpage.style.display = 'none'
@@ -214,9 +306,10 @@ const eth = document.querySelector(".ETH")
         transactionHistory.style.display = 'none'
     }
         function theDash(){
-        dashboard.style.backgroundColor='rgb(74, 116, 158)'
+        dashboard.style.backgroundColor='rgb(135, 190, 245)'
         dashboard.style.width = '130px'
         dashboard.style.borderRadius = '15px'
+        profileH2.style.display ="block"
         setting.style.backgroundColor='transparent'
         walle.style.backgroundColor='transparent'
         walletpage.style.display = 'none'
@@ -224,50 +317,67 @@ const eth = document.querySelector(".ETH")
         plan.style.display = 'block'
         transactionHistory.style.display = 'none'
         }
-const student = document.querySelector(".student")
-const regular = document.querySelector(".regular")
-const economy = document.querySelector(".economy")
-const vip = document.querySelector(".vip")
-const promo = document.querySelector(".promo")
-const planbox = document.querySelector("#Planbox")
-
         function studentPlan(){
             plan.style.display = 'none'
             wallet()
+            planbox.style.display = "block"
+            withdrawBtn.style.display ='none'
+            depositController.style.display ='block'
             planbox.placeholder = " minimum $150"
             planbox.min = "150"
             planbox.name = 'studentPlan'
         }
         function regularPlan(){
             plan.style.display = 'none'
+            planbox.style.display = "block"
            wallet()
+           withdrawBtn.style.display ='none'
+           depositController.style.display ='block'
             planbox.placeholder = " minimum $3,000"
             planbox.min = "3000"
             planbox.name = 'regularPlan'
         }
         function economyPlan(){
             plan.style.display = 'none'
+            planbox.style.display = "block"
             wallet()
+            withdrawBtn.style.display ='none'
+            depositController.style.display ='block'
             planbox.placeholder = " minimum $10,000"
             planbox.min = "10000"
             planbox.name = 'economyPlan'
         }
         function vipPlan(){
             plan.style.display = 'none'
+            planbox.style.display = "block"
            wallet()
+           withdrawBtn.style.display ='none'
+           depositController.style.display ='block'
             planbox.placeholder = " minimum $20,000"
             planbox.min = "20000"
             planbox.name = 'vipPlan'
         }
+        function companyPlan(){
+            planbox.style.display = "block"
+            plan.style.display = 'none'
+            wallet()
+            withdrawBtn.style.display ='none'
+            depositController.style.display ='block'
+            planbox.placeholder = " minimum $50,000"
+            planbox.min = "50000"
+            planbox.name = 'companyPlan'
+        }
         function promoPlan(){
+            planbox.style.display = "block"
             plan.style.display = 'none'
            wallet()
+           withdrawBtn.style.display ='none'
+            depositController.style.display ='block'
             planbox.placeholder = " minimum $100,000"
             planbox.min = "100000"
             planbox.name = 'vipPlan'
         }
         function deposit(){
-
         const coinValue = coin.value
         if(coinValue === 'USDT'){
             usdt.style.display = 'block'
@@ -275,6 +385,7 @@ const planbox = document.querySelector("#Planbox")
             eth.style.display = 'none'
            tron.style.display = 'none'
             ltc.style.display = 'none'
+            alert(`You have chosen to deposit ${coinValue}.\nDeposit must be made within 15mins after confirmation`)
         }
         else if(coinValue === 'BTC'){
             usdt.style.display = 'none'
@@ -282,6 +393,7 @@ const planbox = document.querySelector("#Planbox")
             eth.style.display = 'none'
            tron.style.display = 'none'
             ltc.style.display = 'none'
+            alert(`You have chosen to deposit ${coinValue}.\nDeposit must be made within 15mins after confirmation`)
         }
         else if(coinValue === 'LTC'){
             usdt.style.display = 'none'
@@ -289,6 +401,7 @@ const planbox = document.querySelector("#Planbox")
             eth.style.display = 'none'
            tron.style.display = 'none'
             ltc.style.display = 'block'
+            alert(`You have chosen to deposit ${coinValue}.\nDeposit must be made within 15mins after confirmation`)
         }
         else if(coinValue === 'Eth'){
             usdt.style.display = 'none'
@@ -296,6 +409,7 @@ const planbox = document.querySelector("#Planbox")
             eth.style.display = 'block'
            tron.style.display = 'none'
             ltc.style.display = 'none'
+            alert(`You have chosen to deposit ${coinValue}.\nDeposit must be made within 15mins after confirmation`)
         }
         else if(coinValue === 'Tron'){
             usdt.style.display = 'none'
@@ -303,6 +417,7 @@ const planbox = document.querySelector("#Planbox")
             eth.style.display = 'none'
            tron.style.display = 'block'
             ltc.style.display = 'none'
+            alert(`You have chosen to deposit ${coinValue}.\nDeposit must be made within 15mins after confirmation`)
         }
         else{
             usdt.style.display = 'none'
@@ -311,7 +426,41 @@ const planbox = document.querySelector("#Planbox")
            tron.style.display = 'none'
             ltc.style.display = 'none'
         }
+
+    }
+        function withdraw(){
+            alert(`Withdrawal request submitted successfully. \n Payment will be made within 48hrs`)
         }
+        const sendHttpRequest = (method, url, data) => {
+      const promise = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+    
+        xhr.responseType = 'json';
+    
+        if (data) {
+          xhr.setRequestHeader('Content-Type', 'application/json');
+        }
+    
+        xhr.onload = () => {
+          if (xhr.status >= 400) {
+            reject(xhr.response);
+          } else {
+            resolve(xhr.response);
+          }
+        };
+    
+        xhr.onerror = () => {
+          reject('Something went wrong!');
+        };
+    
+        xhr.send(JSON.stringify(data));
+      });
+      return promise;
+    };
+    const getUser = () => {
+      sendHttpRequest('GET', 'https://libertexapi.herokuapp.com/getuser/?access_token='+localStorage.getItem["token"])
+    }
       </script>
     </body>
 </html>

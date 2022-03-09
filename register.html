@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Libertex | Register</title>
+    <link rel="icon" href="logo.jfif" type="image/x-icon">
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
@@ -44,17 +45,15 @@
         </div>
         <h2> CREATE YOUR ACCOUNT</h2>
 
-        <form action="">
-            <input class="input" autofocus name="Fullname" type="text" placeholder="Full Name"><br>
-            <input class="input" name="email" type="email" placeholder="Enter your Email ID"><br>
-            <input class="input" name="tel" type="tel" placeholder="Phone Number"><br>
-            <input class="input" name="refID" type="text" placeholder="Referral ID"><br>
-            <input class="input" type="password" name="password" placeholder="Enter your Password"><br>
-            <input id ="checkbox" type="checkbox" name="Policy" value="I Agree"> I agree with Assets Trade FX <a href="#">Privacy Policy</a><br>
-            <button type="submit"> SIGN UP</button>
+        <form action="" target="_blank" method="post">
+            <input  class="input fname" autofocus name="name" type="text" placeholder="Full Name"><br>
+            <input class="input emailID" name="email" type="email" placeholder="Enter your Email ID"><br>
+            <input class="input tel" name="phonenumber" type="tel" placeholder="Phone Number"><br>
+            <input class="input password" type="password" name="password" placeholder="Enter your Password"><br>
+            <button onclick="sendData()" type="submit"> SIGN UP</button>
         </form>
 
-        <p>Already have an acount? <a href="login.html">Login Here</a> </p>
+        <center><p>Already have an acount? <a href="login.html">Login Here</a> </p></center>
        
 
         <div class="paymentMethod">
@@ -80,6 +79,64 @@
             <p>copyrights @ Assets Trade fx. 2011 -2022</p>
             <p>All Rights Reserved</p>
         </div>
+        <script>
+            const sendHttpRequest = (method, url, data) => {
+      const promise = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+    
+        xhr.responseType = 'json';
+    
+        if (data) {
+          xhr.setRequestHeader('Content-Type', 'application/json');
+        }
+    
+        xhr.onload = () => {
+          if (xhr.status >= 400) {
+            reject(xhr.response);
+          } else {
+            resolve(xhr.response);
+          }
+        };
+    
+        xhr.onerror = () => {
+          reject('Something went wrong!');
+        };
+    
+        xhr.send(JSON.stringify(data));
+      });
+      return promise;
+    };
+       
+    const sendData = () => {
+        const email = document.querySelector(".emailID")
+    const emailValue = email.value
+     const name = document.querySelector(".fname")
+     const nameValue = name.value
+    const password = document.querySelector(".password")
+    const passValue = password.value
+    const tel = document.querySelector(".tel")
+     const telValue = tel.value
+        sendHttpRequest('POST', 'https://libertexapi.herokuapp.com/signup', {
+          emailID: emailValue,
+          password: passValue,
+          name: nameValue,
+          phoneNumber: telValue,
+
+
+        })
+          .then(responseData => {
+            console.log(responseData);
+            localStorage.setItem("token",responseData["token"]);
+            localStorage.setItem("id",responseData.user["_id"]);
+            window.location.href = "login.html"
+
+          })
+          .catch(err => {
+            alert(err.msg);
+          });
+      };  
+        </script>
         <script>
             function shownav(){
                 const navul = document.querySelector('#hamburgerMenu')

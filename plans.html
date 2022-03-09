@@ -14,17 +14,13 @@
     <div class="parent">
         <div class="menu">
             <ul class="contact">
-                <li><a href="mailto:info@libertex.com">info@libertex.com</a></li>
-                <li><a href="tel:+2349021680875">+2349021680875</a></li>
-    
-            </ul>
+                <li><a href="mailto:info@libertex.com">info@libertex.com</a></li>            
+            </ul>            
             <ul class="login">
                 <li><a href="login.html">Log in</a></li>
                 <li><a href="register.html">Register</a></li>
-                <section id="social"><li><a href="#"><img src="ig.png" height="20px" alt=""></a></li>
-
-                    <li><a href="#"><img src="tme.png" height="20px" alt=""></a></li></section>
-                
+                <li><a href="#"><img src="ig.png" height="20px" alt=""></a></li>
+                <li><a href="#"><img src="tme.png" height="20px" alt=""></a></li>                
             </ul>
         </div>
         <div onclick="shownav()" class="menuBtn">
@@ -33,7 +29,7 @@
             <div onclick="shownav()"></div>
     </div>
         <div class="profile">
-            <a href="index.html"><img id="logo" src="logo.jfif" height="40px"alt=""> <h3>LIBERTEX</h3></a>
+            <div class="logo"><a href="index.html"><img id="logo" src="logo.jfif" height="40px"alt=""></a> <a href="index.html"><p>LIBERTEX</p></a></div>
             <div class="profileList">
                 <ul id="hamburgerMenu">
                     <li><a href="index.html">HOME</a></li>            
@@ -42,38 +38,80 @@
                 </ul>  
             </div>
         </div>
+        
         <div class="welcome">
             <h1>OUR  PLANS!</h1>
         </div>
-        <div class="planbox">
-           <p> Investment Plans </p>
-
-Student plan
-Minimum: $150
-Maximum: $2,999
-Profit x2 -12hours 
-
-Regular plan
-Minimum: $3000
-Maximum: $9,999
-Profit x3 24hours
-
-
-Economy Plan 
-Minimum: $10,000
-Maximum: $19,999
-Profit x5 in 48hours
-
-VIP plan 
-Minimum: $20,000
-Maximum: $99,999 
-Profit x10 in 7days 
-
-VVIP/PROMO PLAN 
-Minimum: $100,000
-Maximum: Unlimited 
-Profit x10 30days
+        <div class="pageBanner">
+            <h2> Investment Plans </h2>
         </div>
+        <div id="planbox">
+                <div class="span1">
+                    <div class="plans" id="plan1">
+                        <p>STUDENT PLAN</p>
+                        <li>Minimum: $150</li>
+                        
+                        <li>Maximum: Unlimited</li>
+                    
+                       <li> Profit x2 -12hours </li>
+                    </div>
+    
+                    <div class="plans" id="plan2">
+                        <p>REGULAR PLAN</p>
+                    <li>Minimum: $3000</li>
+                    
+                    <li>Maximum:Unlimited</li>
+                    
+                    <li>Profit x3 24hours</li>
+                    </div>
+    
+                    <div class="plans" id="plan3">  
+                    <p>ECONOMY PLAN </p>
+                    <li>Minimum: $10,000</li>
+                   
+                    <li>Maximum: Unlimited</li>
+                    
+                    <li>Profit x5 in 48hours</li>
+                    </div>
+                    
+                </div>
+
+                <div class="span2">
+                    <div class="plans" id="plan4">
+                        <p>VIP PLAN</p> 
+                   <li> Minimum: $20,000</li>
+                    
+                    <li>Maximum: Unlimited</li>
+                    
+                    <li>Profit x10 in 7days</li> 
+                    </div>
+    
+                    <div class="plans" id="plan5">
+                        <p>COMPANY PLAN</p>
+                        <li>Minimum: $50,000</li>
+    
+                        <li>Maximum: Unlimited</li>
+    
+                        <li>Profit x5 in 30days</li>
+                    </div>
+    
+                    <div class="plans" id="plan6">
+                        <p>VVIP/PROMO PLAN </p>
+                   <li> Minimum: $100,000</li>
+                
+                    <li>Maximum: Unlimited </li>
+                    
+                    <li>Profit x10 30days</li>
+                    </div>
+                </div>
+
+
+        </div>
+    <center>
+        <div>
+            <h3><a href="register.html">Sign Up</a>To Get Started</h3>
+        </div>
+    </center>
 
         <div class="paymentMethod">
             <h2>PAYMENT METHODS WE ACCEPT</h2>
@@ -98,6 +136,8 @@ Profit x10 30days
             <p>copyrights @ Libertex Options Trade. 2010 -2022</p>
             <p>All Rights Reserved</p>
         </div>
+        </div>
+       
         <script>
             function shownav(){
                 const navul = document.querySelector('#hamburgerMenu')

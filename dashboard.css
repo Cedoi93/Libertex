@@ -4,6 +4,12 @@ padding: 0%;
 box-sizing: border-box;
 font-family: montserrat;
 }
+body{
+    background-color: white;
+}
+#theme{
+    display: none;
+}
 .parent{
     margin: 5px 0px;
     position: absolute;
@@ -12,14 +18,17 @@ font-family: montserrat;
     'sidebar mainview mainview mainview'
     ;
 }
+.footer{
+    display: none;
+}
 .sidebar{
     grid-area:sidebar;
     min-height: 98vh;
     margin-left: 5px;
-    background-color: rgb(51, 83, 114);
+    background-color: rgb(79, 142, 206);
     color: white;
     padding: 10px 0px 10px 40px ;
-    width: 200px;
+    width: 90%;
     border-radius: 15px 0px 0px 15px;
     margin-right: 20px;
 }
@@ -49,17 +58,15 @@ font-family: montserrat;
 }
 .profile{
     grid-area: profile;
+    width: 85%;
 }
 .profile ul li+li{
     list-style: none;
     position: relative;
-    
-    left: 20px;
+    left: 130px;
+    top: 20px;
     font-size: 30px;
-    float: right;
-    margin-top: 22px;
-    margin-right: 20px;
-    padding: 3px 5px;
+    float: right;    
     cursor: pointer;
     
 }
@@ -70,69 +77,89 @@ font-family: montserrat;
     color: rgb(74, 116, 158);
     font-size: 23px;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 20px;
     margin-right: 20px;
     width: 400px;
 }
 .mainView{
-  
     grid-area: mainview;
     display: grid;
-    width: 100%;
+    width: 70%;
     
 }
-
 .mainView ul li{
     list-style: none;
 }
-
+.mainView .plan p{
+    position: relative;
+    top: 40px;
+}
 .mainView input{
     height: 30px;
     width: 300px;
 }
 .mainView .wallet{
  float: left;
+ width: 20%;
 }
 .transactionHistory{
     position: relative;
-    left: 700px;
-    top: -500px;
+    left: 600px;
+    top: -300px;
+    width: 350px;
+    background-color:rgb(70, 146, 223);
+    height: 500px;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 0px 5px 10px;
 }
 .mainView .mybal input{
-    margin:10px 50px;
+    margin:10px 40px;
 }
 .mybal select{
 width: 300px;
 height: 30px;
-margin:10px 50px;
+margin: 10px 40px;
 }
 .mybal{
     border-radius: 20px;
     grid-area: a;
     width: 500px;
-    background-color: rgb(51, 83, 114);
+    background-color: rgb(79, 142, 206);
     color: white;
     padding: 20px 0px 20px 40px;
 }
 .mybal button{
  height: 30px;
+ margin: 10px 80px 10px 10px;
  width: 170px;
- margin: 10px;
  border: 2px solid rgb(74, 116, 158);
  border-radius: 20px;
  background-color: white;
  color: rgb(74, 116, 158);
 }
+.mybal h2, .mybal h1, .mybal p{
+    font-size: 20px;
+    
+}
 
 .settings{
+    width: max-content;
     border-radius: 20px;
-    padding: 20px;
-    height: 450px;
-    width: 450px;
-    background-color: rgb(51, 83, 114);
+    padding: 50px;
+    height: fit-content;
+    background-color:rgb(79, 142, 206);
     color: white;
-    margin: 10px auto;
+    margin: 10px 50px;
 }
+.settings .span1{
+    float: left;
+
+}
+.settings .span2{
+    float: right;
+}
+
 .settings input{
     margin: 10px auto;
     border: 2px solid rgb(74, 116, 158);
@@ -149,46 +176,454 @@ margin:10px 50px;
    }
    .plan{
        position:relative;
-       top: -100px;
+       float: right;
+       top: -50px;
+       max-width: 80%;
+       min-width: 55%;
    }
    .plan1, .plan2{
        display: flex;
-       justify-content: space-between;
+       width: 100%;  }
 
-   }
    .planbox span{
-    background-color: rgb(74, 116, 184);
+    box-shadow: grey 1px 1px 10px;
     color:white;
-    font-size: 18px;
-    margin: 5px 20px;
-    padding: 40px;
+    font-size: 15px;
+    margin: 10px 10px;
     cursor: pointer;
+    border-radius: 10px;
+    height: 200px;
+    padding: 2em 2em 2em 10em;
+    text-align: right;
+    min-width: 55%;
+    max-width: 80%;
    }
-   .planbox span:hover{
-    transition: .5s;
-    background-color: rgb(139, 174, 230);
-    margin: 2px 10px;
-    padding: 45px;
+  
+   .planbox span ul{
+       display: flex;
+   }
+   .planbox span ul li{
+    margin: 2px;
+    font-size: 30px;
 
    }
+   .planbox span h3{
+       margin-top: 10px;
+   }
+
    .address{
        font-size: 18px;
    }
    .plan p{
        font-size: 30px;
-       color:rgb(74, 116, 158);
+       color:rgb(79, 142, 206);
        margin: 10px 10px 30px 20px;
    }
    .student{
-       border-left:rgb(74, 116, 158) 2px solid ;
-       border-radius: 15px 0px 0px 0px;
+     background-color: rgb(176, 207, 238);
    }
    .economy{
-    border-radius:  0px 15px 0px 0px;
+    background-color: rgb(135, 190, 245);
 }
 .promo{
-    border-radius:0px 0px 15px  0px;
+    background-color: rgb(79, 142, 206);
 }
    .vip{
-    border-radius:  0px 0px 0px 15px;
+    background-color: rgb(70, 146, 223);
+}
+
+.regular{
+    background-color: rgb(21, 136, 250);
+}
+.company{
+    background-color:rgb(123, 165, 207)
+}
+
+@media (max-width: 1160px ) and (min-width:920px){
+    .plan1, .plan2{
+        display: flex;
+        width: auto;
+    }
+    .footer{
+        display: none;
+    }
+    .planbox span{
+     box-shadow: grey 1px 1px 10px;
+     color:white;
+     font-size: 12px;
+     margin: 10px 10px;
+     
+     cursor: pointer;
+     border-radius: 10px;
+     height: 150px;
+     padding: 20px  30px 0px 90px;
+     text-align: right;
+    }
+    .planbox span ul{
+        display: flex;
+    }
+    .planbox span ul li{
+     margin: 2px ;
+     font-size: 20px;
+ 
+    }
+    .profile ul li+li{
+        top: -5px
+    }
+    .transactionHistory{
+        color: white;
+        position: relative;
+        top: 0;
+        left: 0;
+         padding: 10px 0px 5px 15px;
+        margin: 15px;
+        height: fit-content;
+        background-color: rgb(70, 146, 223);
+        height: 500px;
+        border-radius: 15px;
+        
+    }
+    .settings {
+        width: fit-content;
+    }
+    .settings .span1{
+        float: left;
+    }
+    .settings .span2{
+        float: right;
+    }
+    
+   
+}
+@media(max-width: 920px) and (min-width:750px){
+    .plan1, .plan2{
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .planbox{
+        display: flex;
+        margin-top: 40px;
+    }
+    .profile{
+        width: 91.5%;
+    }
+    .profile ul li+li{
+        left: -50px;
+    }
+    .planbox span{
+
+     box-shadow: grey 1px 1px 10px;
+     color:white;
+     font-size: 12px;
+        width: 20em;
+     cursor: pointer;
+     border-radius: 10px;
+     height: 150px;
+     padding: 20px  30px 0px 90px;
+     text-align: right;
+    }
+    .planbox span ul{
+        display: flex;
+    }
+    .planbox span ul li{
+     margin: 2px ;
+     font-size: 20px;
+ 
+    }
+    .footer{
+        display: none;
+    }
+    .profile{
+    position: relative;
+    top:-20px;
+    }
+    .transactionHistory{
+        color: white;
+        position: relative;
+        top: 0;
+        left: 0;
+         padding: 10px 0px 5px 15px;
+        margin: 15px;
+        background-color: rgb(70, 146, 223);
+        height: 500px;
+        border-radius: 15px;
+        
+    }
+    .settings {
+        width: fit-content;
+    }
+    .settings .span1{
+        float: left;
+    }
+    .settings .span2{
+        float: right;
+    }
+}
+@media(min-width:400px) and (max-width:750px){
+    .parent{
+    
+        display: grid;
+        grid-template-areas: 'profile profile profile'
+        'footer footer footer'
+        'mainview mainview mainview'
+        ;
+    }
+    .settings {
+        width: fit-content;
+    }
+    .settings .span1{
+        float: left;
+    }
+    .settings .span2{
+        float: right;
+    }
+    .profile{
+    grid-area: profile;
+    margin: 10px 30px 30px 30px;
+    width: 70%;
+    }
+    .mainView{
+    grid-area: mainview;
+
+    margin:0 1.5em;
+    }
+    
+    .sidebar{
+        display: none;
+    }
+    .footer{
+        width: 280px;
+        z-index: 2;
+        grid-area: footer;
+        background-color: rgb(79, 142, 206);
+        display: block;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+    .footer ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+       
+    }
+    .footer ul li{
+        color: white;
+    padding: 15px;
+    font-size: 20px;
+    }
+    .plan1, .plan2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .plan2 {
+        margin: 0px 0px 0px 20px;
+        width: 80%;
+    }
+    .planbox{
+        display: flex;
+        margin-top: 40px;
+    
+    }
+    .profile{
+        width: 50.5%;
+        
+        max-height: 40px;
+    }
+    .profile ul li+li{
+        top:-35px
+    }
+    .planbox span{
+        min-width: 180px;
+     box-shadow: grey 1px 1px 10px;
+     color:white;
+     font-size: 12px;
+    margin-left: 20%;
+     cursor: pointer;
+     border-radius: 10px;
+     height: 150px;
+     padding: 50px  7px 0px 50px;
+     /* text-align: right; */
+    }
+    .planbox span ul{
+        display: flex;
+        margin-left:50px;
+    }
+    .planbox span ul li{
+     margin: 2px ;
+     font-size: 20px;
+    }
+    .footer ul li:hover {
+        background-color: rgb(141, 176, 211);
+        padding: 10px;
+        margin: 5px;
+        border-radius: 15%;
+        
+    }
+    .mybal{
+        position: absolute;
+        width: 350px;
+        margin-left: 20px;
+    }
+    .address p i{
+        position: relative;
+        max-width: 320px;
+        font-size: 0.7em;
+        padding-right: 5px;
+        left: -10px;
+    }
+    .coin{
+        position: relative;
+       left: 40px ;
+    }
+    .mybal h1, .mybal h2{
+        font-size: 20px;
+    }
+    .mybal input, .mybal select{
+        width: 200px;
+        margin: 0;
+    }
+    .transactionHistory{
+        color: white;
+         padding: 10px 0px 5px 15px;
+        margin: 15px;
+        background-color: rgb(70, 146, 223);
+        height: auto;
+        width: 280px;
+        border-radius: 15px;
+        left: 0px;
+        top: 48vh;
+       
+}
+}
+@media(max-width: 400px) {
+.parent{
+    display: grid;
+    grid-template-areas: 'profile profile profile'
+    'footer footer footer'
+    'mainview mainview mainview'
+    ;
+}
+.settings {
+    width: fit-content;
+}
+.settings .span1{
+    float: left;
+}
+.settings .span2{
+    float: right;
+}
+.address p i{
+    position: relative;
+    max-width: 320px;
+    font-size: 0.7em;
+    padding-right: 5px;
+    left: -10px;
+}
+.profile{
+grid-area: profile;
+margin: 10px 30px 30px 30px;
+width: 70%;
+}
+.mainView{
+grid-area: mainview;
+margin:0;
+max-width: 90%;
+}
+.sidebar{
+    display: none;
+}
+.footer{
+    width: 280px;
+    z-index: 2;
+    grid-area: footer;
+    background-color: rgb(79, 142, 206);
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+.footer ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+   
+}
+.footer ul li{
+    color: white;
+padding: 15px;
+font-size: 20px;
+}
+.plan1, .plan2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.plan2 {
+    margin: 0px 0px 0px 20px;
+    width: 80%;
+}
+.planbox{
+    display: flex;
+    margin-top: 40px;
+
+}
+.profile{
+    width: 50.5%;
+    
+    max-height: 40px;
+}
+.profile ul li+li{
+    top:-35px
+}
+.planbox span{
+    min-width: 180px;
+ box-shadow: grey 1px 1px 10px;
+ color:white;
+ font-size: 12px;
+margin-left: 20%;
+ cursor: pointer;
+ border-radius: 10px;
+ height: 150px;
+ padding: 50px  7px 0px 50px;
+ /* text-align: right; */
+}
+.planbox span ul{
+    display: flex;
+    margin-left:50px;
+}
+.planbox span ul li{
+ margin: 2px ;
+ font-size: 20px;
+}
+.footer ul li:hover {
+    background-color: rgb(141, 176, 211);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15%;
+    
+}
+.mybal{
+    width: 350px;
+    margin-left: 20px;
+}
+.mybal h1, .mybal h2{
+    font-size: 20px;
+}
+.mybal input, .mybal select{
+    width: 200px;
+    margin: 0;
+}
+.transactionHistory{
+    color: white;
+     padding: 10px 0px 5px 15px;
+    margin: 15px;
+    background-color: rgb(70, 146, 223);
+    height: auto;
+    width: 280px;
+    border-radius: 15px;
+    left: 0px;
+    top: 48vh;
+   
+}
 }

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Libertex | Login</title>
+    <link rel="icon" href="logo.jfif" type="image/x-icon">
     <link rel="stylesheet" href="login.css">
+  
 </head>
 <body>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,15 +49,15 @@
         </div>
         <h2> LOG IN TO LIBERTEX</h2>
 
-        <form action="">
-            <input required autofocus name="email" type="email" placeholder="Enter your Email ID"><br>
-            <input required type="password" name="password" placeholder="Enter your Password"><br>
-            <button type="submit" > <a href="dashboard.html"> LOG IN</a></button>
-        </form>
+        <div class="form">
+            <input class="email" required autofocus name="email" type="email" placeholder="Enter your Email ID"><br>
+            <input class="passkey" required type="password" name="password" placeholder="Enter your Password"><br>
+            <button onclick="sendData()"  type="submit" > LOG IN </button>
+        </div>
 
-        <p>Don't have an acount? <a href="register.html">Signup Here</a> </p>
-        <p><a href="#">FORGOT PASSWORD</a></p>
-
+        <center><p>Don't have an acount? <a href="register.html">Signup Here</a> </p>
+          <p><a href="#">FORGOT PASSWORD</a></p>
+  </center>
         <div class="paymentMethod">
             <h2>PAYMENT METHODS WE ACCEPT</h2>
             <hr  color="red">
@@ -74,8 +76,8 @@
                 <li>Support@libertex.com</li>
                 <li>Friendly Support Ticket</li>
                 <li>(614)547-3104</li>
-            </ul>
-            <hr >
+            </ul>b
+            \
             <p>copyrights @ Libertex Options Trade. 2010 -2022</p>
             <p>All Rights Reserved</p>
         </div>
@@ -93,5 +95,57 @@
                 }
             }
         </script> 
+          <script>
+            const sendHttpRequest = (method, url, data) => {
+      const promise = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+    
+        xhr.responseType = 'json';
+    
+        if (data) {
+          xhr.setRequestHeader('Content-Type', 'application/json');
+        }
+    
+        xhr.onload = () => {
+          if (xhr.status >= 400) {
+            reject(xhr.response);
+          } else {
+            resolve(xhr.response);
+          }
+        };
+    
+        xhr.onerror = () => {
+          reject('Something went wrong!');
+        };
+    
+        xhr.send(JSON.stringify(data));
+      });
+      return promise;
+    };
+ 
+    const sendData = () => {
+        const email = document.querySelector(".email")
+    const emailValue = email.value
+    const password = document.querySelector(".passkey")
+    const passValue = password.value
+        sendHttpRequest('POST', 'https://libertexapi.herokuapp.com/login', {
+          email: emailValue,
+          password: passValue
+        }
+        )
+          .then(responseData => {
+            // console.log(responseData);
+            localStorage.setItem("token",responseData["token"]);
+            localStorage.setItem("id",responseData.user["_id"]);
+            alert("Login successful")
+             window.location.href = "dashboard.html"
+           
+          })
+          .catch(err => {
+            alert(err.msg)
+          });
+      };  
+        </script>
     </body>
 </html>
